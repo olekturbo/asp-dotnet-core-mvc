@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication2.Validation;
 
 namespace WebApplication2.Models
 {
@@ -17,6 +18,7 @@ namespace WebApplication2.Models
         public string Description { get; set; }
         public byte[] Image { get; set; }
         public int PagesNumber { get; set; }
+        [ClassicBook(1960)]
         public DateTime ReleasteDate { get; set; }
         public int AuthorID { get; set; }
         public Author Author { get; set; }

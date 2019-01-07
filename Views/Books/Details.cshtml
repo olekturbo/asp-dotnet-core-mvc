@@ -26,7 +26,10 @@
             @Html.DisplayNameFor(model => model.Image)
         </dt>
         <dd>
-            <img height="100" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" />
+            @if (Model.Image != null)
+            {
+                <img height="100" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" />
+            }
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.PagesNumber)
@@ -55,6 +58,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    @if (User.IsInRole("Moderator") || User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> 
+}
     <a asp-action="Index">Back to List</a>
 </div>

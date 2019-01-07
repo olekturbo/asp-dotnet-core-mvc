@@ -26,7 +26,10 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-12">
-                        <img height="100" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" />
+                        @if (Model.Image != null)
+                        {
+                            <img height="100" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" />
+                        }
                     </div>
                 </div>
                 <label asp-for="Image" class="control-label"></label>

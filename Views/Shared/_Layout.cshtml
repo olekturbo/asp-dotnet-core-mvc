@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVC APP</title>
+    <title>@ViewData["Title"] - Books Collection</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,10 +26,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MVC APP</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Books Collection</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li><img style="margin-top: 10px;" height="32" width="32" src="http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/256/Book-icon.png" /></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Books" asp-action="Index">Books</a></li>
                     <li><a asp-area="" asp-controller="Categories" asp-action="Index">Categories</a></li>
@@ -46,6 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
+            @Html.Partial("_Contact.cshtml")
             <p>&copy; 2019 - MVC APP</p>
         </footer>
     </div>
